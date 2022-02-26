@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="refresh" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="og:title" content="Research Title Generator">
+	<meta property="og:site_name" content="Research Title Generator">
+    <meta name="og:image" content="div6.jpg">
+    <meta name="og:description" content="This tool randomly generates research title ideas for your reference or inspiration. Currently, the generated titles are for senior highschool and college students">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Montserrat:wght@100&family=Moo+Lah+Lah&family=Open+Sans:wght@300;500;600;700&family=Poppins:wght@100;200;300;400;600;700&family=Raleway:wght@100&family=Shizuru&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/d5b7c2a01a.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<title>Research Title Generator</title>
+</head>
+<body onload=startTimer();>
+	<div class="container">
+		<h1 id="welcome">What is your name?</h1>
+		<h2 id="loading"></h2>
+		<div class="input">
+			<input type="text" id="name" autocomplete="off"
+			placeholder="Your Name" onchange="changeName()">
+		</div>
+	</div>
+		<script type="text/javascript">
+			function changeName() {
+				var name =  document.getElementById('name').value;
+
+				if (name.length > 1) {
+					document.getElementById('name').style.opacity = '0';
+					document.getElementById('welcome').innerHTML = "Hi there, " + name;
+					document.getElementById('loading').innerHTML = "The page is currently processing. Please be patient.";
+					setTimeout(function(){
+                        window.location.href = 'second.html';
+                    }, 1200);
+				}
+				else{
+					document.getElementById('welcome').innerHTML = "What is your name?";
+				}
+			}
+		</script>
+</body>
+</html>

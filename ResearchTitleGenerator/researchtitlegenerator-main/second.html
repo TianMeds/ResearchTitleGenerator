@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="refresh" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="og:title" content="Research Title Generator">
+	<meta property="og:site_name" content="Research Title Generator">
+    <meta name="og:image" content="div6.jpg">
+    <meta name="og:description" content="This tool randomly generates research title ideas for your reference or inspiration. Currently, the generated titles are for senior highschool and college students">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Montserrat:wght@100&family=Moo+Lah+Lah&family=Open+Sans:wght@300;500;600;700&family=Poppins:wght@100;200;300;400;600;700&family=Raleway:wght@100&family=Shizuru&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/d5b7c2a01a.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/second.css">
+	<title>Research Title Generator</title>
+</head>
+<body onload=startTimer();>
+	<div class="container">
+		<h1 id="welcome">How old are you?</h1>
+		<h2 id="loading"></h2>
+		<div class="input">
+			<input type="number" id="age" autocomplete="off"
+			placeholder="Your Age" onchange="changeName()">
+		</div>
+	</div>
+		<script type="text/javascript">
+			function changeName() {
+				var name =  document.getElementById('age').value;
+
+				if (name > 14) {
+					document.getElementById('age').style.opacity = '0';
+					document.getElementById('welcome').innerHTML = "Redirecting... ";
+					document.getElementById('loading').innerHTML = "The page is currently processing. Please be patient.";
+					setTimeout(function(){
+                        window.location.href = 'seniorhigh.html';
+                    }, 2000);
+				}
+				if (name < 15){
+					document.getElementById('welcome').innerHTML = "We cannot process your Request";
+					document.getElementById('loading').innerHTML = "Redirecting to my Portfolio and Contact Me the Problem";
+					setTimeout(function(){
+                        window.location.href = 'https://tianmeds.github.io/TianPortfolio/';
+                    }, 3000);
+					document.getElementById('age').style.opacity = '0';
+				}
+			}
+		</script>
+</body>
+</html>
